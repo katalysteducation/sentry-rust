@@ -109,7 +109,10 @@
 //!   is currently the default transport.
 //! * `with_curl_transport`: enables the curl transport.
 //! * `with_std_error`: enables the `std::error::Error` integration
+//! * `with_std_backtrace`: enable support for backtraces in `std::error::Error`
+//!   (unstable, requires nightly Rust)
 #![warn(missing_docs)]
+#![cfg_attr(feature = "with_std_backtrace", feature(backtrace))]
 
 #[macro_use]
 mod macros;
